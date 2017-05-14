@@ -1,5 +1,8 @@
 # AppNews
-*] Link File APK release dari Aplikasi (pastikan dapat diakses oleh siapa pun tanpa perlu login apapun)
+
+**Link**
+
+https://drive.google.com/open?id=0Bxey0goa5M3kVHA5cnF5OW5XbVU
 
 **Identitas Siswa:** 
 
@@ -25,7 +28,7 @@ Navigation Drawer
 
 **Local Database**
 
-SQLite Dasar
+Sugar ORM
 
 **Deskripsi :** 
 
@@ -38,4 +41,9 @@ Kelebihan aplikasi ini yaitu pengguna dapat membagi isi berita kepada semua tema
 
 **Screenshot**
 
-*] Screenshot dari Aplikasi minimal 5 buah (atur posisinya dengan baik, atur ukuran agar mudah dilihat/dibaca, tidak terlalu kecil juga tidak terlalu besar)
+![1](https://cloud.githubusercontent.com/assets/22130165/26031868/2855b4fe-38ad-11e7-8298-32fe9a4a92f2.png)
+![2](https://cloud.githubusercontent.com/assets/22130165/26031867/2854e6f0-38ad-11e7-9014-398ba7269c10.png)
+![3](https://cloud.githubusercontent.com/assets/22130165/26031869/285c71a4-38ad-11e7-8b67-5b8f5178f893.png)
+![4](https://cloud.githubusercontent.com/assets/22130165/26031871/285fc0e8-38ad-11e7-9795-88b105a8ad17.png)
+![5](https://cloud.githubusercontent.com/assets/22130165/26031870/285da81c-38ad-11e7-96a0-78dab396f0dd.png)
+
