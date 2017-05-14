@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -30,10 +32,15 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
-
     private static final String URL_DATA = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=a2da39a7d3fb4d9d848849fc44d1a71c";
+    public TextView textViewHead;
+    public TextView textViewDesc;
+    public ImageView imageViewUrl;
+    public String urlgambar;
+    LikeItem likeItem;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
+
 
     private List<ListItem> listItems;
 
@@ -52,6 +59,7 @@ public class MainFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+
         listItems = new ArrayList<>();
         loadRecyclerViewData();
 
@@ -66,7 +74,7 @@ public class MainFragment extends Fragment {
 
     private void loadRecyclerViewData() {
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Memuat Data, Tunggu sebentar...");
+        progressDialog.setMessage("Loading Data...");
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
@@ -109,6 +117,18 @@ public class MainFragment extends Fragment {
 //
 //        recyclerView.setAdapter(adapter);
 //
+
+    public void doSave() {
+        String judul = textViewHead.getText().toString();
+        String diskripsi = textViewDesc.getText().toString();
+        String urlImage = urlgambar;
+        likeItem = new LikeItem(judul, diskripsi, urlImage);
+        likeItem.save();
+
+
+    }
+
+
 
 }
 
