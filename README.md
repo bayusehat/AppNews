@@ -1,5 +1,7 @@
 # AppNews
-*] Link File APK release dari Aplikasi (pastikan dapat diakses oleh siapa pun tanpa perlu login apapun)
+
+**Link
+https://drive.google.com/open?id=0Bxey0goa5M3kVHA5cnF5OW5XbVU
 
 **Identitas Siswa:** 
 
@@ -25,7 +27,7 @@ Navigation Drawer
 
 **Local Database**
 
-SQLite Dasar
+Sugar ORM
 
 **Deskripsi :** 
 
