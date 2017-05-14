@@ -118,16 +118,6 @@ public class MainFragment extends Fragment {
 //        recyclerView.setAdapter(adapter);
 //
 
-    public void doSave() {
-        String judul = textViewHead.getText().toString();
-        String diskripsi = textViewDesc.getText().toString();
-        String urlImage = urlgambar;
-        likeItem = new LikeItem(judul, diskripsi, urlImage);
-        likeItem.save();
-
-
-    }
-
 
 
 }

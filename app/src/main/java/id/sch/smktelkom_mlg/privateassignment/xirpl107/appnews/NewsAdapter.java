@@ -16,43 +16,44 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 /**
- * Created by Rokerecekecek on 10/05/2017.
+ * Created by Rokerecekecek on 13/05/2017.
  */
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
-
-    private List<ListItem> listItems;
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
+    //    private TextView tvHead;
+//    private TextView tvDesc;
+//    private ImageView iv;
+    private List<NewsItem> newsItems;
     private Context context;
 
-    public MainAdapter(List<ListItem> listItems, Context context) {
-        this.listItems = listItems;
+    public NewsAdapter(List<NewsItem> newsItems, Context context) {
+        this.newsItems = newsItems;
         this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item, parent, false);
+                .inflate(R.layout.news_item, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
+        final NewsItem newsItem = newsItems.get(position);
 
-        final ListItem listItem = listItems.get(position);
-
-        holder.textViewHead.setText(listItem.getHead());
-        holder.textViewDesc.setText(listItem.getDesc());
+        holder.tvHead.setText(newsItem.getHeadNews());
+        holder.tvDesc.setText(newsItem.getDescNews());
 
 
         Glide.with(context)
-                .load(listItem.getImage())
-                .into(holder.imageView);
+                .load(newsItem.getImageNews())
+                .into(holder.iv);
 
-        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayoutNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent singleBlogIntent = new Intent(context, ScrollingActivity.class);
+                Intent singleBlogIntent = new Intent(context, NewsActivity.class);
                 singleBlogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 singleBlogIntent.putExtra("Anu", position);
                 context.startActivity(singleBlogIntent);
@@ -60,7 +61,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             }
         });
 
-        holder.imageButtonShare.setOnClickListener(new View.OnClickListener() {
+        holder.ibShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -72,38 +73,29 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 context.startActivity(shareIntent);
             }
         });
-
-
     }
-
 
     @Override
     public int getItemCount() {
-        return listItems.size();
+        return newsItems.size();
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView textViewHead;
-        public TextView textViewDesc;
-        public ImageView imageView;
-        public LinearLayout linearLayout;
-        public ImageButton imageButtonShare;
-        public ImageButton imageButtonLike;
+        public TextView tvHead;
+        public TextView tvDesc;
+        public ImageView iv;
+        public LinearLayout linearLayoutNews;
+        public ImageButton ibShare;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            tvHead = (TextView) itemView.findViewById(R.id.tvHead);
+            tvDesc = (TextView) itemView.findViewById(R.id.tvDesc);
+            iv = (ImageView) itemView.findViewById(R.id.iv);
+            linearLayoutNews = (LinearLayout) itemView.findViewById(R.id.linearLayoutNews);
+            ibShare = (ImageButton) itemView.findViewById(R.id.ibShare);
 
-            textViewHead = (TextView) itemView.findViewById(R.id.textViewHead);
-            textViewDesc = (TextView) itemView.findViewById(R.id.textViewDesc);
-            imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.linearLayout);
-            imageButtonShare = (ImageButton) itemView.findViewById(R.id.imageButtonShare);
-            imageButtonLike = (ImageButton) itemView.findViewById(R.id.ibShare);
+
         }
-
     }
-
-
 }

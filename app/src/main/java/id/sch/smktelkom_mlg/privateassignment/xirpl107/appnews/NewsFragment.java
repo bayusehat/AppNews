@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class NewsFragment extends Fragment {
     private static final String URL_DATA = "https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=a2da39a7d3fb4d9d848849fc44d1a71c";
-    List<ListItem> listItems;
+    List<NewsItem> newsItems;
     private RecyclerView recyclerViewNews;
     private RecyclerView.Adapter adapter;
 
@@ -50,14 +50,14 @@ public class NewsFragment extends Fragment {
         recyclerViewNews.setHasFixedSize(true);
         recyclerViewNews.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        listItems = new ArrayList<>();
+        newsItems = new ArrayList<>();
         loadRecyclerViewData();
         return view;
     }
 
     private void loadRecyclerViewData() {
         final ProgressDialog progessDialog = new ProgressDialog(getActivity());
-        progessDialog.setMessage("Memuat Berita...");
+        progessDialog.setMessage("Loading Data...");
         progessDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
@@ -72,14 +72,14 @@ public class NewsFragment extends Fragment {
 
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject o = array.getJSONObject(i);
-                                ListItem item = new ListItem(
+                                NewsItem item = new NewsItem(
                                         o.getString("title"),
                                         o.getString("abstract"),
                                         o.getString("thumbnail_standard")
                                 );
-                                listItems.add(item);
+                                newsItems.add(item);
                             }
-                            adapter = new MainAdapter(listItems, getActivity().getApplicationContext());
+                            adapter = new NewsAdapter(newsItems, getActivity().getApplicationContext());
                             recyclerViewNews.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();

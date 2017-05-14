@@ -95,12 +95,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             fragment = new NewsFragment();
             setTitle("NY Newswire");
-
         } else if (id == R.id.nav_slideshow) {
-
+            fragment = new LikeFragment();
+            setTitle("Like Page");
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
+
 
         } else if (id == R.id.nav_send) {
 

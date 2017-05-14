@@ -27,37 +27,6 @@
         android:background="@drawable/home"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:visibility="visible">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Selamat Datang,"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="We hope you can enjoy it."
-                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                    android:textStyle="italic" />
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
     </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton

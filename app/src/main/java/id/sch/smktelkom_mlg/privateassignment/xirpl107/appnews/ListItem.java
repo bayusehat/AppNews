@@ -1,10 +1,12 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl107.appnews;
 
+import com.orm.SugarRecord;
+
 /**
  * Created by Rokerecekecek on 10/05/2017.
  */
 
-public class ListItem {
+public class ListItem extends SugarRecord {
     private String head;
     private String desc;
     private String image;
